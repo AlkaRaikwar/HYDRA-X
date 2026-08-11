@@ -1,0 +1,25 @@
+# .gitignore
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Environment / secrets — NEVER commit
+.env
+backend/.env
+
+# React build
+frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Editor
+.vscode/
+.idea/
