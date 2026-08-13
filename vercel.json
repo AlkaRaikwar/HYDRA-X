@@ -1,0 +1,27 @@
+{
+  "services": {
+    "frontend": {
+      "root": "frontend/",
+      "framework": "create-react-app"
+    },
+    "backend": {
+      "root": "backend/",
+      "entrypoint": "src/index.js",
+      "framework": "express"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
+}
