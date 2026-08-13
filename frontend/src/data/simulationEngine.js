@@ -1,0 +1,147 @@
+/**
+ * HYDRA-X Emergency Simulation Engine
+ * Drives the 60-90 second animated flood emergency event sequence
+ */
+
+export const EMERGENCY_STEPS = [
+  {
+    id: 1,
+    title: 'Weather Deteriorates',
+    description: 'Rainfall spikes from 18 mm/h to 76 mm/h. Storm system approaching.',
+    agent: 'WEATHER',
+    duration: 5000,
+    icon: '🌧️',
+    type: 'WEATHER',
+    data: { rainfall: 76, prev: 18 },
+  },
+  {
+    id: 2,
+    title: 'Risk Engine Activates',
+    description: 'Numerical risk engine recalculates all zones. Critical zones: 3 → 12.',
+    agent: 'FLOOD_RISK',
+    duration: 5000,
+    icon: '📊',
+    type: 'RISK',
+    data: { criticalZones: 12, prev: 3 },
+  },
+  {
+    id: 3,
+    title: 'Drainage Agent Activated',
+    description: '8 drains at critical blockage risk detected. Priority maintenance queue generated.',
+    agent: 'DRAINAGE',
+    duration: 5000,
+    icon: '🔧',
+    type: 'DRAIN',
+    data: { criticalDrains: 8 },
+  },
+  {
+    id: 4,
+    title: 'Citizen Reports Arriving',
+    description: '17 citizen reports received across Paldi, Vastrapur, and Adajan zones.',
+    agent: 'CITIZEN',
+    duration: 5000,
+    icon: '👥',
+    type: 'REPORTS',
+    data: { totalReports: 17 },
+  },
+  {
+    id: 5,
+    title: 'AI Clustering Reports',
+    description: 'Duplicate detection: 17 reports → 7 verified incidents (confidence: 94%).',
+    agent: 'CITIZEN',
+    duration: 5000,
+    icon: '🧠',
+    type: 'CLUSTER',
+    data: { reports: 17, incidents: 7 },
+  },
+  {
+    id: 6,
+    title: 'Resource Allocation Optimized',
+    description: 'Response Agent dispatches: T-01 → Paldi, T-03 → Adajan, T-07 → Vesu.',
+    agent: 'RESPONSE',
+    duration: 6000,
+    icon: '🚨',
+    type: 'DISPATCH',
+    data: { assignments: [{ team: 'T-01', zone: 'Paldi' }, { team: 'T-03', zone: 'Adajan' }, { team: 'T-07', zone: 'Vesu' }] },
+  },
+  {
+    id: 7,
+    title: 'AI Action Plan Generated',
+    description: 'Orchestrator generates comprehensive 12-point action plan across all active agents.',
+    agent: 'ORCHESTRATOR',
+    duration: 6000,
+    icon: '📋',
+    type: 'PLAN',
+    data: {},
+  },
+  {
+    id: 8,
+    title: 'Awaiting Officer Approval',
+    description: 'Road closure and evacuation advisory submitted for human review and approval.',
+    agent: 'GOVERNANCE',
+    duration: 7000,
+    icon: '👤',
+    type: 'APPROVAL',
+    data: {},
+  },
+  {
+    id: 9,
+    title: 'Teams Dispatched',
+    description: 'Officer approved. Teams T-01, T-03, T-07 en route. ETA: 8–14 minutes.',
+    agent: 'RESPONSE',
+    duration: 6000,
+    icon: '🏃',
+    type: 'DISPATCH_CONFIRMED',
+    data: {},
+  },
+  {
+    id: 10,
+    title: 'Risk Begins Decreasing',
+    description: 'Pump operations active. Paldi risk: 87 → 74. Rainfall intensity easing.',
+    agent: 'FLOOD_RISK',
+    duration: 6000,
+    icon: '📉',
+    type: 'RECOVERY',
+    data: { newRisk: 74, prevRisk: 87 },
+  },
+  {
+    id: 11,
+    title: 'Damage Assessment Started',
+    description: 'Damage Agent activated. Infrastructure scan in progress across 3 zones.',
+    agent: 'DAMAGE',
+    duration: 5000,
+    icon: '🏗️',
+    type: 'DAMAGE',
+    data: {},
+  },
+  {
+    id: 12,
+    title: 'Post-Event Report Generated',
+    description: 'Ahmedabad Resilience Score: 74/100. 3 key improvements recommended.',
+    agent: 'RESILIENCE',
+    duration: 5000,
+    icon: '📊',
+    type: 'REPORT',
+    data: { resilienceScore: 74 },
+  },
+];
+
+export const DEMO_SCENARIOS = {
+  NORMAL: { name: 'Normal Weather', rainfall: 12, duration: 1, drainageEfficiency: 85, blockedDrains: 1, teamAvailability: 90 },
+  HEAVY_RAIN: { name: 'Heavy Rain', rainfall: 60, duration: 2, drainageEfficiency: 65, blockedDrains: 3, teamAvailability: 80 },
+  EXTREME_RAIN: { name: 'Extreme Rain', rainfall: 100, duration: 3, drainageEfficiency: 40, blockedDrains: 6, teamAvailability: 60 },
+};
+
+export const AUDIT_LOG = [
+  { id: 'AUD-001', timestamp: '2024-07-20T10:08:00Z', action: 'ROAD_CLOSURE_APPROVED', actor: 'Officer Joshi', zone: 'Paldi', aiRecommendation: true, confidence: 0.93, outcome: 'EXECUTED' },
+  { id: 'AUD-002', timestamp: '2024-07-20T10:15:00Z', action: 'TEAM_DISPATCH_APPROVED', actor: 'Officer Patel', zone: 'Adajan', aiRecommendation: true, confidence: 0.91, outcome: 'EXECUTED' },
+  { id: 'AUD-003', timestamp: '2024-07-20T09:55:00Z', action: 'EVACUATION_ADVISORY_REJECTED', actor: 'Officer Singh', zone: 'Bopal', aiRecommendation: true, confidence: 0.72, outcome: 'REJECTED', reason: 'Risk score below operational threshold' },
+  { id: 'AUD-004', timestamp: '2024-07-20T10:22:00Z', action: 'MAINTENANCE_PRIORITY_MODIFIED', actor: 'Officer Desai', zone: 'Vastrapur', aiRecommendation: true, confidence: 0.88, outcome: 'MODIFIED', reason: 'Adjusted priority order based on field report' },
+];
+
+export const DAMAGE_ASSESSMENTS = [
+  { id: 'DMG-001', zone: 'PALDI', city: 'AHMEDABAD', type: 'ROAD_DAMAGE', severity: 'HIGH', evidence: 'Sensor data + citizen images', confidence: 0.89, priority: 'P1', action: 'Emergency road repair + dewatering', estimatedCost: '₹4.2L', icon: '🛣️' },
+  { id: 'DMG-002', zone: 'ADAJAN', city: 'SURAT', type: 'DRAIN_DAMAGE', severity: 'CRITICAL', evidence: 'CCTV + sensor + citizen reports', confidence: 0.94, priority: 'P0', action: 'Immediate drain repair and cleaning', estimatedCost: '₹2.8L', icon: '🔧' },
+  { id: 'DMG-003', zone: 'VASTRAPUR', city: 'AHMEDABAD', type: 'INFRASTRUCTURE', severity: 'MODERATE', evidence: 'Sensor data', confidence: 0.81, priority: 'P2', action: 'Structural inspection within 24h', estimatedCost: '₹1.5L', icon: '🏗️' },
+  { id: 'DMG-004', zone: 'VESU', city: 'SURAT', type: 'ROAD_DAMAGE', severity: 'HIGH', evidence: 'Citizen images + field report', confidence: 0.87, priority: 'P1', action: 'Pothole repair + traffic diversion', estimatedCost: '₹3.1L', icon: '🛣️' },
+];

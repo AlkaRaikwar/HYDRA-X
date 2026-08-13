@@ -1,10 +1,11 @@
 @echo off
-title SwasthyaSetu - Rural Healthcare AI
+title HYDRA-X - AI Urban Flood Intelligence
 
 echo.
 echo ============================================================
-echo   SwasthyaSetu -- Rural Healthcare AI (IBM Granite)
-echo   Problem Statement #19: Rural and Tribal Healthcare
+echo   HYDRA-X -- AI-Powered Urban Flood Intelligence
+echo   Predict. Prevent. Respond. Recover.
+echo   IBM Hackathon -- Smart Urban Flooding Ahmedabad-Surat
 echo ============================================================
 echo.
 
@@ -44,23 +45,25 @@ if not exist node_modules (
 
 echo [3/4] Starting backend (port 5000)...
 cd ..\backend
-start "SwasthyaSetu Backend" cmd /k "node src/index.js"
+start "HYDRA-X Backend" cmd /k "node src/index.js"
 
 echo [4/4] Starting frontend (port 3000)...
 cd ..\frontend
 timeout /t 2 /nobreak >nul
-start "SwasthyaSetu Frontend" cmd /k "set PORT=3000 && npx react-scripts start"
+start "HYDRA-X Frontend" cmd /k "set PORT=3000 && npx react-scripts start"
 
 echo.
 echo ============================================================
-echo   Backend  : http://localhost:5000
+echo   HYDRA-X is starting...
+echo.
 echo   Frontend : http://localhost:3000
+echo   Backend  : http://localhost:5000
 echo.
-echo   The browser will open automatically in a few seconds.
-echo   Close both command windows to stop the project.
+echo   DEMO MODE: All data is simulated. No API keys required.
+echo   To enable IBM Granite: set WATSONX_API_KEY in backend/.env
 echo.
-echo   AI Mode: DEMO (set backend/.env for IBM Granite)
+echo   Navigating to http://localhost:3000 in a few seconds...
 echo ============================================================
 echo.
-timeout /t 3 /nobreak >nul
+timeout /t 4 /nobreak >nul
 start http://localhost:3000

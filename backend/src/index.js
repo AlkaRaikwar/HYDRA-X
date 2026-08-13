@@ -42,7 +42,7 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   const mode = process.env.WATSONX_API_KEY ? 'IBM Granite (watsonx)' : 'DEMO MODE';
-  console.log(`\n🏥 Rural Healthcare API running on http://localhost:${PORT}`);
+  console.log(`\n⬡ HYDRA-X API running on http://localhost:${PORT}`);
   console.log(`🤖 AI Mode: ${mode}`);
   console.log(`📋 Health check: http://localhost:${PORT}/api/health\n`);
 });
