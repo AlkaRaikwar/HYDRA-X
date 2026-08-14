@@ -391,7 +391,7 @@ AI-generated recommendations should be validated by responsible civic authoritie
 The system should not replace official emergency-management procedures.
 Demonstration data should not be represented as real government or emergency data unless verified.
 Production deployment would require proper validation, security, privacy, and operational integration.
-📊 Token Usage
+📊  Token Usage
 
 Token usage data was not provided in the Challenge 7 source material.
 
