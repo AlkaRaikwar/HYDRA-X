@@ -1,4 +1,4 @@
-# 🌧️ HYDRA-X — Smart Urban Flooding & Drainage Management System
+#  HYDRA-X    Smart Urban Flooding & Drainage Management System
 
 ### Challenge 7 — IBM University Engagement | Domain: Urban Infrastructure
 
@@ -8,7 +8,7 @@ Powered by **IBM Granite LLM**, **IBM Granite 4-H Small**, **IBM watsonx.ai**, *
 
 ---
 
-## 🧭 Problem Statement
+##  Problem Statement
 
 Rapid urbanization in cities like **Ahmedabad and Surat** has outpaced stormwater drainage infrastructure, causing:
 
@@ -22,7 +22,7 @@ The objective is to create an **Agentic AI solution** that predicts flood-prone 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 HYDRA-X focuses on:
 
@@ -35,7 +35,7 @@ HYDRA-X focuses on:
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technology |
 |---|---|
@@ -49,7 +49,7 @@ HYDRA-X focuses on:
 
 ---
 
-## 🤖 AI Agents Architecture
+##  AI Agents Architecture
 
 ```text
                          User / Citizen
@@ -108,7 +108,7 @@ HYDRA-X focuses on:
 
 
 
-🤝 Six Specialized AI Agents
+ Six Specialized AI Agents
 Agent	Responsibility
 Flood Risk Prediction Agent	Identifies and prioritizes flood-prone zones.
 Drainage Maintenance Scheduling Agent	Prioritizes drainage maintenance activities and schedules.
@@ -119,7 +119,7 @@ Post-Disaster Damage Assessment Agent	Supports damage assessment after flood eve
 
 The six agents collaborate around a shared flood-management workflow.
 
-🧠 IBM Granite Integration
+ IBM Granite Integration
 
 HYDRA-X uses IBM Granite LLM through IBM watsonx.ai as the AI foundation for the Agentic AI solution.
 
@@ -137,7 +137,7 @@ Civic response guidance
 Citizen reporting support
 Urban resilience insights
 Post-disaster assessment support
-🌊 LangFlow / Agentic Components
+ LangFlow / Agentic Components
 
 The solution architecture includes the following components:
 
@@ -171,7 +171,7 @@ Provides the user-facing interface for interacting with the system.
 
 Coordinates the six specialized urban-flood-management agents.
 
-🔄 Agentic AI Workflow
+ Agentic AI Workflow
 User / Citizen Input
         ↓
 React JS User Interface
@@ -243,7 +243,7 @@ HYDRA-X/
 
 The repository may contain additional project-specific files and folders.
 
-🚀 Quick Start
+ Quick Start
 Prerequisites
 Node.js 18+
 npm 9+
@@ -267,7 +267,7 @@ npm start
 
 Use the commands defined in the project's actual package.json files if they differ.
 
-🔑 IBM Credentials Setup
+ IBM Credentials Setup
 
 The Challenge 7 environment requires IBM credentials for the Granite integration.
 
@@ -287,7 +287,7 @@ Keep the real .env file local and add it to .gitignore.
 
 If required, publish only an .env.example file containing placeholder values.
 
-🧪 Demo / Fallback Mode
+ Demo / Fallback Mode
 
 If IBM credentials are unavailable, the application may provide a clearly labelled demonstration or fallback mode depending on the implementation.
 
@@ -302,7 +302,7 @@ Live Project
 
 https://hydra-x-nine.vercel.app/flood
 
-📦 Required Submission Files
+ Required Submission Files
 
 The Challenge 7 submission requires:
 
@@ -313,7 +313,7 @@ Other applicable project files
 
 The repository should contain these files when submitting the final project.
 
-💡 Role of Agentic AI
+ Role of Agentic AI
 
 Agentic AI enables HYDRA-X to operate as a coordinated set of specialized agents rather than a single chatbot.
 
@@ -335,7 +335,7 @@ Faster civic response
 Better drainage management
 Citizen participation
 Improved post-event assessment
-✨ Novelty & Uniqueness
+ Novelty & Uniqueness
 1. Multi-Agent Intelligence
 
 Six specialized agents address different operational tasks in urban flood management.
@@ -360,7 +360,7 @@ Citizen flood reporting adds on-ground information to the urban flood-management
 
 Urban resilience monitoring and post-disaster damage assessment extend the solution beyond simple flood prediction.
 
-🔮 Future Scope
+ Future Scope
 1. Real-Time Weather & Rainfall Integration
 
 Connect rainfall forecasts and live weather signals to improve flood-risk prediction.
@@ -385,7 +385,7 @@ Use images and geospatial data to improve post-disaster assessment.
 
 Extend the architecture beyond Ahmedabad and Surat to other flood-prone cities.
 
-⚠️ Safety & Limitations
+ Safety & Limitations
 HYDRA-X is an AI-assisted urban infrastructure decision-support system.
 AI-generated recommendations should be validated by responsible civic authorities.
 The system should not replace official emergency-management procedures.
@@ -397,7 +397,7 @@ Token usage data was not provided in the Challenge 7 source material.
 
 Therefore, no token numbers are claimed in this README.
 
-🏆 Challenge 7 Summary
+ Challenge 7 Summary
 
 Challenge: Smart Urban Flooding & Drainage Management System for Ahmedabad–Surat
 
